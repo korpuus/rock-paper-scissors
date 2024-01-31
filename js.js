@@ -70,4 +70,30 @@ function playRound() {
   }
 }
 
-console.log(playRound());
+
+
+//playGame function with loop and score
+
+function playGame() {
+  let win = 0;
+  let lose = 0;
+  let tie = 0;
+  let score = `Won: ${win}, Lost: ${lose}, Tied: ${tie}`;
+  const round = playRound();
+
+  for (i = 0; i < 5; i++) {
+    console.log(round)
+    if (round === 'You win. Rock beats scissors!' || round === 'You win. Paper beats rock!' || round === 'You win. Scissors beats paper!') {
+      win++;
+    }
+    else if (round === 'You lose. Paper beats rock!' || round === 'You lose. Scissors beats paper!' || round === 'You lose. Rock beats scissors!') {
+      lose++;
+    }
+    else {
+      tie++;
+    }
+    console.log(score);
+  }
+}
+
+console.log(playGame());
