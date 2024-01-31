@@ -19,18 +19,20 @@ function getComputerChoice () {
 
 //Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner or tie of the round like so: "You Lose! Paper beats Rock"
 
+//first function for getting player choice
+
 function getPlayerChoice() {
   const playerChoice = prompt('Pick Rock, Paper or Scissors: ');
    
-  if (playerChoice.toLocaleLowerCase() === 'rock') {
+  if (playerChoice.toLowerCase() === 'rock') {
     const rock = 'Rock';
     return rock;
   }
-  else if (playerChoice.toLocaleLowerCase() === 'paper') {
+  else if (playerChoice.toLowerCase() === 'paper') {
     const paper = 'Paper';
     return paper;
   }
-  else if (playerChoice.toLocaleLowerCase() === 'scissors') {
+  else if (playerChoice.toLowerCase() === 'scissors') {
     const scissors = 'Scissors';
     return scissors;
   }
@@ -41,3 +43,6 @@ function getPlayerChoice() {
 }
 
 console.log(getPlayerChoice());
+
+//then function for single round of game
+
