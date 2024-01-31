@@ -1,48 +1,73 @@
-//function called getComputerChoice that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. We’ll use this function in the game to make the computer’s play.
+//function to get random choice from computer
 
 function getComputerChoice () {
   if (Math.random() < 1/3) {
-    const rock = 'Rock';
-    return rock;
+    return 'rock';
   }
-  else if (Math.random() >= 1/3 && Math.random() <= 2/3) {
-    const paper = 'Paper';
-    return paper;
+  else if (Math.random() > 1/3 && Math.random() < 2/3) {
+    return 'paper';
   }
   else {
-    const scissors = 'Scissors';
-    return scissors;
+    return 'scissors';
   }
 }
 
-
-
-//Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner or tie of the round like so: "You Lose! Paper beats Rock"
-
-//first function for getting player choice
+//function that takes choice from player
 
 function getPlayerChoice() {
   const playerChoice = prompt('Pick Rock, Paper or Scissors: ');
    
   if (playerChoice.toLowerCase() === 'rock') {
-    const rock = 'Rock';
-    return rock;
+    return 'rock';
   }
   else if (playerChoice.toLowerCase() === 'paper') {
-    const paper = 'Paper';
-    return paper;
+    return 'paper';
   }
   else if (playerChoice.toLowerCase() === 'scissors') {
-    const scissors = 'Scissors';
-    return scissors;
+    return 'scissors';
   }
   else {
-    const invalidEntry = 'Invalid entry, try again';
-    return invalidEntry;
+    return 'Invalid entry, try again';
   }
-}
+};
 
-console.log(getPlayerChoice());
 
 //then function for single round of game
 
+function playRound() {
+  const playerSelection = getPlayerChoice();
+  const computerSelection = getComputerChoice();
+
+  if (playerSelection === computerSelection) {
+    return 'Tie!';
+  }
+
+  if (playerSelection === 'rock') {
+    if (computerSelection === 'scissors') {
+      return 'You win. Rock beats scissors!';
+    }
+    else if (computerSelection === 'paper') {
+      return 'You lose. Paper beats rock!';
+    }
+  }
+
+  if (playerSelection === 'paper') {
+    if (computerSelection === 'rock') {
+      return 'You win. Paper beats rock!';
+    }
+    else if (computerSelection === 'scissors') {
+      return 'You lose. Scissors beats paper!';
+    }
+  }
+
+  if (playerSelection === 'scissors') {
+    if (computerSelection === 'rock') {
+      return 'You lose. Rock beats scissors!';
+    }
+    else if (computerSelection === 'paper') {
+      return 'You win. Scissors beats paper!';
+    }
+  }
+}
+
+console.log(playRound());
