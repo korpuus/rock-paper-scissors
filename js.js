@@ -78,11 +78,12 @@ function playGame() {
   let win = 0;
   let lose = 0;
   let tie = 0;
-  let score = `Won: ${win}, Lost: ${lose}, Tied: ${tie}`;
-  const round = playRound();
+  let score = ``;
+  
 
   for (i = 0; i < 5; i++) {
-    console.log(round)
+    const round = playRound();
+
     if (round === 'You win. Rock beats scissors!' || round === 'You win. Paper beats rock!' || round === 'You win. Scissors beats paper!') {
       win++;
     }
@@ -92,7 +93,10 @@ function playGame() {
     else {
       tie++;
     }
+    const updatedScore = `Won: ${win}, Lost: ${lose}, Tied: ${tie}`;
+    score = updatedScore;
     console.log(score);
+    console.log(round);
   }
 }
 
