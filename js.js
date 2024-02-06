@@ -1,5 +1,3 @@
-//function to get random choice from computer
-
 function getComputerChoice () {
   if (Math.random() < 1/3) {
     return 'rock';
@@ -11,11 +9,6 @@ function getComputerChoice () {
     return 'scissors';
   }
 }
-
-//function that takes choice from player
-
-
-//then function for single round of game
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -50,7 +43,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-
 //playGame function with loop and score
 
 // function playGame() {
@@ -81,26 +73,43 @@ function playRound(playerSelection, computerSelection) {
 
 //console.log(playGame());
 
-let rockButton = document.getElementById('rock-button');
-rockButton.addEventListener('click', () => {
-  let playerSelection = 'rock';
-  let computerSelection = getComputerChoice();
-  let result = playRound(playerSelection, computerSelection);
-  console.log(result);
-});
+// let rockButton = document.getElementById('rock-button');
+// rockButton.addEventListener('click', () => {
+//   let playerSelection = 'rock';
+//   let computerSelection = getComputerChoice();
+//   let result = playRound(playerSelection, computerSelection);
+//   console.log(result);
+// });
 
-let paperButton = document.getElementById('paper-button');
-paperButton.addEventListener('click', () => {
-  let playerSelection = 'paper';
-  let computerSelection = getComputerChoice();
-  let result = playRound(playerSelection, computerSelection);
-  console.log(result);
-});
+// let paperButton = document.getElementById('paper-button');
+// paperButton.addEventListener('click', () => {
+//   let playerSelection = 'paper';
+//   let computerSelection = getComputerChoice();
+//   let result = playRound(playerSelection, computerSelection);
+//   console.log(result);
+// });
 
-let scissorsButton = document.getElementById('scissors-button');
-scissorsButton.addEventListener('click', () => {
-  let playerSelection = 'scissors';
-  let computerSelection = getComputerChoice();
-  let result = playRound(playerSelection, computerSelection);
-  console.log(result);
+// let scissorsButton = document.getElementById('scissors-button');
+// scissorsButton.addEventListener('click', () => {
+//   let playerSelection = 'scissors';
+//   let computerSelection = getComputerChoice();
+//   let result = playRound(playerSelection, computerSelection);
+//   console.log(result);
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  let resultElement = document.getElementById('result');
+  
+  document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+          let playerSelection = button.textContent.toLowerCase();
+          let computerSelection = getComputerChoice();
+          let result = playRound(playerSelection, computerSelection);
+          displayResult(result);
+      });
+  });
+
+  function displayResult(result) {
+      resultElement.textContent = result;
+  }
 });
