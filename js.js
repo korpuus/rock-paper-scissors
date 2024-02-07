@@ -71,7 +71,7 @@ function playRound(playerSelection, computerSelection) {
 //   }
 // }
 
-//console.log(playGame());
+
 
 // let rockButton = document.getElementById('rock-button');
 // rockButton.addEventListener('click', () => {
