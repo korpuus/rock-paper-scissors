@@ -43,29 +43,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-//playGame function with loop and score
-
-function score() {
-  let win = 0;
-  let lose = 0;
-  let tie = 0;
-  let score = ``;  
-  const round = playRound();
-
-  if (round === 'You win. Rock beats scissors!' || round === 'You win. Paper beats rock!' || round === 'You win. Scissors beats paper!') {
-    win++;
-  }
-  else if (round === 'You lose. Paper beats rock!' || round === 'You lose. Scissors beats paper!' || round === 'You lose. Rock beats scissors!') {
-    lose++;
-  }
-  else {
-    tie++;
-  }
-  score = `Won: ${win}, Lost: ${lose}, Tied: ${tie}`;
-  
-
-}
-
 document.addEventListener('DOMContentLoaded', function() {
   let resultElement = document.getElementById('result');
   let playerScoreElement = document.getElementById('player-score');
